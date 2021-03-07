@@ -1,0 +1,14 @@
+.relatedlinks {
+    display: flex;
+    flex-direction: column;
+}
+
+.relatedlinks h3 {
+    font-family: system-ui;
+    font-weight: 900;
+    font-size: 21px;
+}
+
+.relatedlinks span {
+    margin: 5px 0;
+}

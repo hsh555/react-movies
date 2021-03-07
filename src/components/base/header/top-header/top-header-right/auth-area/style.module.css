@@ -1,0 +1,21 @@
+.authArea button {
+    margin-right: 10px;
+    padding: 14px 4px;
+    background-color: initial;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-family: sans-serif;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+}
+
+.authArea button:hover {
+    color: #59b38d;
+}
+
+/* .authArea .signUp {
+    margin-left: 20px;
+} */

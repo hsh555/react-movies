@@ -1,0 +1,39 @@
+
+/* sdsd */
+.castCard {
+    margin: 5px;
+    border-radius: 7px;
+    padding: 0 0 5px 0;
+    font-family: system-ui;
+    font-size: 13px;
+    box-shadow: 0 0 5px #999;
+}
+
+
+.cardInner {
+    width: 146px;
+    position: relative;
+    height: 75%;
+    cursor: pointer;
+    background: #ccc;
+    transition: 0.2s;
+}
+
+.castCard p {
+    padding: 5px 4px;
+    font-family: system-ui;
+    font-size: 13px;
+}
+
+.castCard p.character {
+    font-weight: 700;
+}   
+
+.cardInner .cardImage {
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+

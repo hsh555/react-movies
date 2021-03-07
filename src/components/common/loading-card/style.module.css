@@ -1,0 +1,20 @@
+.loadingCard {
+    height: 300px;
+    margin: 5px;
+}
+
+.cardInner {
+    width: 146px;
+    position: relative;
+    height: 73%;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 7px;
+}
+
+.title {
+    margin-top: 14px;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #ccc;
+}

@@ -1,0 +1,17 @@
+.topHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #032541;
+    padding: 6px 0;
+    color: #fff;
+}
+
+/* .topHeaderInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background: #032541;
+    padding: 6px 10px; */
+    /* color: #fff; */
+/* } */ 

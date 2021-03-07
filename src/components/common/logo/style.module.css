@@ -1,0 +1,9 @@
+.logoArea {
+    width: 190px;
+    position: relative;
+    top: 2px;
+}
+
+.logoArea img {
+    max-width: 100%;
+}

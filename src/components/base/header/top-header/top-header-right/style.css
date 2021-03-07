@@ -1,0 +1,10 @@
+.topHeaderRight {
+    display: flex;
+    align-items: center;
+}
+
+.topHeaderRight .searchIcon  {
+    font-size: 18px;
+    color: #317cc0;
+    cursor: pointer;
+}

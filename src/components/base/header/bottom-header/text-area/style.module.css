@@ -1,0 +1,14 @@
+.textArea {
+    font-family: system-ui;
+    color: #fff;
+}
+
+.textTitle {
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.textBody {
+    font-size: 30px;
+    font-weight: 600;
+}
