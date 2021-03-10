@@ -1,5 +1,6 @@
 .movieDetails {
     background-size: cover;
+    position: relative;
     width: 100%;
     height: 500px;
     margin-bottom: 30px;

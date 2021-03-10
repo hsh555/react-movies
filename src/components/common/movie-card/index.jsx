@@ -1,9 +1,7 @@
-import styles from "./style.module.css";
-import image from "../../../assets/images/cover.jpg";
-import PopularMovies from "../card-group";
 import { Link } from "react-router-dom";
 import React from 'react';
-
+import styles from "./style.module.css";
+import baseUrls from "../../../utils/base-urls";
 
 const MovieCard = React.memo(
     (props) => {
@@ -11,7 +9,7 @@ const MovieCard = React.memo(
             <div className={styles.cardMovie}>
                 <Link to={`/movie/${props.id}`}>
                     <div className={styles.cardInner}>
-                        <img className={styles.cardImage} src={props.poster} />
+                    {props.poster ? <img className={styles.cardImage} alt={props.title} src={`${baseUrls.basePictureUrl}/${props.poster}`}/> : null}
                         <div className={styles.info}>
                             <span className={styles.vote}>{props.vote}</span>
                             <p className={styles.released}>Release at {props.release_date}</p>

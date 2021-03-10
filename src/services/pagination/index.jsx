@@ -1,20 +1,11 @@
 import React, { useMemo } from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
-// icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
-// styles
 import './style.css';
 
 const Pagination = (props) => {
-    // const [totalProducts, perPageItems] = [105, 3]
-
-    const search = props.location.search;
-    console.log(props.location);
-    const pathName = `${props.location.pathname}`;
-    const urlParams = new URLSearchParams(search);
-    // const currentPage = urlParams.get("page") || 50;
-    console.log(props.currentPage, props.totalPages);
+    const pathName = props.location.pathname;
 
     const pagesList = useMemo(() => {
         const list = [];
@@ -30,29 +21,29 @@ const Pagination = (props) => {
         return pagesList.map(item => {
             if (pagesList.includes(Number(props.currentPage))) {
                 if (Number(props.currentPage) === item) {
-                    return <Link to={`${pathName}?type=${props.type}&page=${item}`} data-page={item} className="active">{item}</Link>
+                    return <Link to={`${pathName}?${props.query}=${props.queryVal}&page=${item}`} data-page={item} className="active">{item}</Link>
                 } else {
-                    return <Link to={`${pathName}?type=${props.type}&page=${item}`} data-page={item}>{item}</Link>
+                    return <Link to={`${pathName}?${props.query}=${props.queryVal}&page=${item}`} data-page={item}>{item}</Link>
                 }
             } else {
-                return <Redirect to="/" />
+                return <Redirect to={`${pathName}?${props.query}=${props.queryVal}`} />
             }
         })
     }
 
     return (
         <div className="pagination">
-            <Link to={`${pathName}?type=${props.type}&page=1`}>
+            <Link to={`${pathName}?${props.query}=${props.queryVal}&page=1`}>
                 First
             </Link>
-            <Link to={Number(props.currentPage) === 1 ? `${pathName}?type=${props.type}&page=1` : `${pathName}?type=${props.type}&page=${Number(props.currentPage) - 1}`}>
+            <Link to={Number(props.currentPage) === 1 ? `${pathName}?${props.query}=${props.queryVal}&page=1` : `${pathName}?${props.query}=${props.queryVal}&page=${Number(props.currentPage) - 1}`}>
                 <FontAwesomeIcon icon={faAngleDoubleLeft} />
             </Link>
             {renderLinks()}
-            <Link to={Number(props.currentPage) === props.totalPages ? `${pathName}?type=${props.type}&page=${props.totalPages}` : `${pathName}?type=${props.type}&page=${Number(props.currentPage) + 1}`}>
+            <Link to={Number(props.currentPage) === props.totalPages ? `${pathName}?${props.query}=${props.queryVal}&page=${props.totalPages}` : `${pathName}?${props.query}=${props.queryVal}&page=${Number(props.currentPage) + 1}`}>
                 <FontAwesomeIcon icon={faAngleDoubleRight} />
             </Link>
-            <Link to={`${pathName}?type=${props.type}&page=${props.totalPages}`}>
+            <Link to={`${pathName}?${props.query}=${props.queryVal}&page=${props.totalPages}`}>
                 Last
             </Link>
         </div>

@@ -1,0 +1,24 @@
+.searchMovie {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 5px 20px #555;
+    z-index: 99999999999;
+}
+
+.trends {
+    padding: 10px 0;
+}
+
+.trends h2 {
+    margin: 5px 0;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 24px;
+}
+
+.trends p {
+    font-size: 14px;
+    padding: 8px 0;
+    font-weight: 500;
+}

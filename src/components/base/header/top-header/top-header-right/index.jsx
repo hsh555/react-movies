@@ -1,15 +1,12 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AuthArea from "./auth-area";
-import "./style.css";
+import TopHeaderSearchArea from "./top-header-search-area";
+import styles from "./style.module.css";
 
 const TopHeaderRight = () => {
     return (
-        <div className="topHeaderRight">
+        <div className={styles.topHeaderRight}>
             <AuthArea />
-            <span className="searchIcon">
-                <FontAwesomeIcon icon={faSearch} />
-            </span>
+            <TopHeaderSearchArea />
         </div>
     );
 }

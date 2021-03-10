@@ -10,11 +10,13 @@ const apiInitialState = {
     posters: [],
     backdrops: [],
     videoes: [],
-    people: [],
     movie: {},
     activeTab: 1,
-    genres: [],
-    totalPages: 0
+    totalPages: 0,
+    searchTrends: [],
+    isSearchMovieOpen: false,
+    totalResults: 0,
+    searchMovies: [],
 };
 
 export default apiInitialState;

@@ -1,17 +1,12 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom"
-import PublicLayout from "../components/layouts/public-layout";
-import Home from "../pages/home"
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import routes from "./routes";
 
 const RouteHandler = () => {
     return (
         <BrowserRouter>
             <Switch>
-                    {/* <PublicLayout>
-                        <Home />
-                    </PublicLayout> */}
-                    {routes.map(route => (
-                        <Route path={route.path} exact>
+                    {routes.map((route, index) => (
+                        <Route key={index} path={route.path} exact>
                             <route.layout>
                                 <route.component />
                             </route.layout>

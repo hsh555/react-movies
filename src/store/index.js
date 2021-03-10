@@ -1,10 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import apiReducer from "./api-store/reducer";
-// import mainReducer from "./main-store/reducer";
+import mainReducer from "./main-store/reducer";
 import authReducer from "./auth-store/reducer";
 
 const appReducer = combineReducers({
     apiReducer,
+    mainReducer,
     authReducer
 });
 

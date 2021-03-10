@@ -11,8 +11,8 @@ const AuthArea = () => {
     
     return (
         <div className={styles.authArea}>
-            <button className={styles.signUp} onClick={() => handleAuthModal("signUp")}>Sign Up</button>
-            <button className="login" onClick={() => handleAuthModal("Login")}>Login</button>
+            <button onClick={() => handleAuthModal("signUp")}>Sign Up</button>
+            <button onClick={() => handleAuthModal("Login")}>Login</button>
         </div>
     );
 }

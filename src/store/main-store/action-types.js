@@ -1,0 +1,6 @@
+const ACTION_TYPES = {
+    SHOW_MSG: "SHOW_MSG",
+    TOGGLE_SUCCESS_MSG: "TOGGLE_SUCCESS_MSG"
+};
+
+export default ACTION_TYPES;

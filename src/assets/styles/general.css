@@ -1,3 +1,8 @@
+body {
+    font-family: system-ui, sans-serif;
+    font-size: 16px;
+}
+
 /* ------------------- grid ------------------ */
 .container {
     width: 100%;
@@ -6,22 +11,52 @@
     padding-right: 4%;
 }
 
-.container-md {
+/* --------------------------- global clasess  ----------------------------- */
+
+.seperator {
+    width: 66%;
+    margin: 20px auto;
+}
+
+.seperator h2 {
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.moviesArea {
     width: 100%;
-    margin: 0 auto;
-    max-width: 960px;
+    padding: 20px;
+    display: flex;
+    flex-flow: wrap;
 }
 
-.container-fluid {
+.cardGroup {
     width: 100%;
 }
 
-.col-2 {
-    width: 16.66%;
+.cardArea {
+    display: flex;
+    overflow: auto;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
 }
 
-.col-8 {
-    width: 66.66%;
+.head h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+.color-red {
+    color: brown;
+}
+
+.color-grey {
+    color: grey;
+}
+
+.color-green {
+    color: darkgreen
 }
 
 /* ------------------------ custom scrollbar -------------------- */
@@ -41,23 +76,3 @@ body::-webkit-scrollbar {
     background: rgb(189, 189, 189);
     border-radius: 5px;
 }
-
-/* @media only screen and (min-width: 1369px) {
-    .container {
-        padding-right: 6%;
-        padding-left: 6%;
-    }
-}
-
-@media only screen and (max-width: 1367px) {
-    .container {
-        padding-right: 4%;
-        padding-left: 4%;
-    }
-} */
-
-/* @media only screen and (max-width: 1240px){
-    .container {
-        width: 960px;
-    }
-} */

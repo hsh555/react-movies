@@ -1,0 +1,9 @@
+.msg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #eee;
+    color: #555;
+    padding: 10px 15px;
+    border-radius: 3px 0 0 3px;
+}

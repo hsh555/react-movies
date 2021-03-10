@@ -2,3 +2,7 @@
     font-family: cursive;
     font-size: 13px;
 }
+
+.copyWrite span {
+    padding: 0 3px;
+}

@@ -4,8 +4,8 @@ const pathes = {
     MOVIE: "/movie/:id",
     TV_SHOWS: "/tv-shows",
     PEOPLE: "/people",
-    MY_FAVORITES: "/my-favorites",
-    FIND: "/find/:search_key",
+    FAVORITES: "/favorites",
+    SEARCH: "/search",
     NOT_FOUND: "*"
 };
 

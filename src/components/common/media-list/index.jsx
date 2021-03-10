@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchImagesAction, fetchVideoesAction, setActiveTabAction } from "../../../store/api-store/actions";
+import { setActiveTabAction } from "../../../store/api-store/actions";
 import baseUrls from "../../../utils/base-urls";
-import LoadingCard from "../loading-card";
-import MovieCard from "../movie-card";
 import SingleLoader from "../single-loader";
-import styles from "./style.module.css";
 import tabItems from "./utils/tab-items";
+import styles from "./style.module.css";
+import { fetchImagesAction, fetchVideoesAction } from "../../../store/api-store/thunk-actions";
 
 const MediaList = (props) => {
     const { posters, videoes, activeTab, backdrops, tabLoading } = useSelector(state => state.apiReducer);
@@ -18,7 +17,6 @@ const MediaList = (props) => {
 
     const getFromApi = async (tabNumber) => {
         if (tabNumber === 1 || tabNumber === 2) {
-            console.log("hellooo")
             dispatch(fetchImagesAction(`${baseUrls.baseApi}/movie/${props.id}/images?api_key=${baseUrls.apiKey}&language=en-US&include_image_language=en,null`));
         } else {
             dispatch(fetchVideoesAction(`${baseUrls.baseApi}/movie/${props.id}/videos?api_key=${baseUrls.apiKey}&language=en-US`));
@@ -47,46 +45,45 @@ const MediaList = (props) => {
 
 
     const renderTabs = () => {
-        return (tabItems.map(item => {
+        return (tabItems.map((item, index) => {
             if (item.tab === activeTab) {
-                return <span data-tab={item.tab} className={styles.active}>{item.name}({getLength(item.tab)})</span>
+                return <span key={index} data-tab={item.tab} className={styles.active}>{item.name}({getLength(item.tab)})</span>
             } else {
-                return <span data-tab={item.tab}>{item.name}({getLength(item.tab)})</span>
+                return <span key={index} data-tab={item.tab}>{item.name}({getLength(item.tab)})</span>
             }
         }));
     }
 
     const renderData = (tab) => {
         if (tab === 1) {
-            console.log(tab)
-            return posters.map(item => (
-                <img className={styles.poster} src={`${baseUrls.basePictureUrl}/${item.file_path}`} alt={props.movieName} />
+            return posters.map((item, index) => (
+                <img key={index} className={styles.poster} src={`${baseUrls.basePictureUrl}/${item.file_path}`} alt={item.title} />
             )
             )
         }
         else if (tab === 2) {
-            return backdrops.map(item =>
+            return backdrops.map((item, index) =>
             (
-                <img className={styles.backdrop} src={`${baseUrls.basePictureUrl}/${item.file_path}`} alt={props.movieName} />
+                <img key={index} className={styles.backdrop} src={`${baseUrls.basePictureUrl}/${item.file_path}`} alt={item.title} />
             )
             )
         } else {
-            return videoes.map(item => (
-                <iframe width="560" height="315" src={`${baseUrls.baseVideoesUrl}/${item.key}`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            return videoes.map((item, index) => (
+                <iframe key={index} width="560" height="315" src={`${baseUrls.baseVideoesUrl}/${item.key}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             )
             )
         }
     }
 
     return (
-        <div className={`${styles.cardGroup} container`}>
+        <div className="cardGroup container">
             <div className={styles.head}>
                 <h2>Media</h2>
                 <div className={styles.cardGroupTabs} onClick={(e) => handleTabs(e)}>
                     {renderTabs()}
                 </div>
             </div>
-            <div className={`${styles.cardArea} scrollbar`}>
+            <div className="cardArea scrollbar">
                 {tabLoading ? <SingleLoader /> : renderData(activeTab)}
             </div>
         </div>

@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import "./assets/styles/reset.css";
-import "./assets/styles/general.css";
 import { Provider } from 'react-redux';
 import store from './store';
+import RouteHandler from './router';
+import "./assets/styles/reset.css";
+import "./assets/styles/general.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <RouteHandler />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

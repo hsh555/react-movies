@@ -84,16 +84,34 @@ const apiReducer = createReducer(apiInitialState, {
             activeTab: action.payload
         };
     },
-    [ACTION_TYPES.GET_GENRES]: (state, action) => {
-        return {
-            ...state,
-            genres: action.payload
-        };
-    },
     [ACTION_TYPES.SET_TOTAL_PAGES]: (state, action) => {
         return {
             ...state,
             totalPages: action.payload
+        };
+    },
+    [ACTION_TYPES.GET_SEARCH_TRENDS]: (state, action) => {
+        return {
+            ...state,
+            searchTrends: action.payload
+        };
+    },
+    [ACTION_TYPES.TOGGLE_IS_SEARCH_MOVIE]: (state, action) => {
+        return {
+            ...state,
+            isSearchMovieOpen: action.payload
+        };
+    },
+    [ACTION_TYPES.GET_TOTAL_RESULTS]: (state, action) => {
+        return {
+            ...state,
+            totalResults: action.payload
+        };
+    },
+    [ACTION_TYPES.GET_SEARCH_MOVIES]: (state, action) => {
+        return {
+            ...state,
+            searchMovies: action.payload
         };
     },
 });

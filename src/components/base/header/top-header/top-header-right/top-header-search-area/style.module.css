@@ -1,0 +1,9 @@
+.searchIcon {
+    font-size: 18px;
+    color: #317cc0;
+    cursor: pointer;
+}
+
+.searchIcon span {
+    padding: 5px;
+}

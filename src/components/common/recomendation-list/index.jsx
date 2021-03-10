@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCardMovieListAction, fetchRecommendationsAction } from "../../../store/api-store/actions";
 import baseUrls from "../../../utils/base-urls";
-import LoadingCard from "../loading-card";
 import MovieCard from "../movie-card";
-import styles from "./style.module.css";
-import {handleLoading} from "../../../helpers";
 import LoadingMovieCard from "../loading-card";
+import { fetchRecommendationsAction } from "../../../store/api-store/thunk-actions";
 
 const RecommendationsList = (props) => {
     const { recommendations, isLoading } = useSelector(state => state.apiReducer);
@@ -21,18 +18,19 @@ const RecommendationsList = (props) => {
     }
 
     return (
-        recommendations.length > 0 ? <div className={`${styles.cardGroup} container`}>
-            <div className={styles.head}>
+        recommendations.length > 0 ? <div className="cardGroup container">
+            <div className="head">
                 <h2>Recomendations</h2>
             </div>
-            <div className={`${styles.cardArea} scrollbar`}>
-                {isLoading ? handleLoading(<LoadingMovieCard />) : recommendations.map(item => {
+            <div className="cardArea scrollbar">
+                {isLoading ? <LoadingMovieCard /> : recommendations.map((item, index) => {
                     return (
                         <MovieCard
+                            key={index}
                             id={item.id}
                             release_date={item.release_date}
                             title={item.title}
-                            poster={`${baseUrls.basePictureUrl}/${item.poster_path}`}
+                            poster={item.poster_path}
                             vote={item.vote_average}
                         />
                     );

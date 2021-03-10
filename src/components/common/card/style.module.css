@@ -1,11 +1,9 @@
-
-/* sdsd */
 .castCard {
+    height: 284px;
     margin: 5px;
-    border-radius: 7px;
     padding: 0 0 5px 0;
-    font-family: system-ui;
     font-size: 13px;
+    border-radius: 7px;
     box-shadow: 0 0 5px #999;
 }
 
@@ -17,11 +15,11 @@
     cursor: pointer;
     background: #ccc;
     transition: 0.2s;
+    border-radius: 7px;
 }
 
 .castCard p {
     padding: 5px 4px;
-    font-family: system-ui;
     font-size: 13px;
 }
 
@@ -36,4 +34,3 @@
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
-

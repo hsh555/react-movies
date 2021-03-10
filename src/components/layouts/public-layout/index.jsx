@@ -1,5 +1,5 @@
 import Header from "../../base/header"
-import React, { Children } from "react";
+import React from "react";
 import TopHeader from "../../base/header/top-header";
 import { withRouter } from "react-router-dom";
 import Content from "../../base/content";
@@ -12,10 +12,13 @@ import Logo from "../../common/logo";
 import RelatedLinks from "../../base/footer/related-links";
 import CopyWrite from "../../base/footer/copy-write";
 import Footer from "../../base/footer";
-import AddModal from "../../common/add-modal";
+import AddModal from "../../tools/add-modal";
 import AuthModal from "../../../services/auth/auth-modal";
+import SearchMovie from "../../common/search-movie";
+import { useSelector } from "react-redux";
 
 const PublicLayout = (props) => {
+    const {isSearchMovieOpen} = useSelector(state => state.apiReducer);
     return (
         <React.Fragment>
             <Header>
@@ -23,6 +26,7 @@ const PublicLayout = (props) => {
                     <TopHeaderLeft />
                     <TopHeaderRight />
                 </TopHeader>
+                {isSearchMovieOpen && <SearchMovie />}
                 {props.location.pathname === "/" && (
                     <BottomHeader>
                         <TextArea />

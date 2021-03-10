@@ -27,16 +27,8 @@ const navItems = [
         ]
     },
     {
-        name: "Tv Shows",
-        path: "/tv-shows"
-    },
-    {
-        name: "People",
-        path: "/people"
-    },
-    {
         name: "Favorites",
-        path: "/my-favorites"
+        path: "/favorites"
     },
 ];
 
