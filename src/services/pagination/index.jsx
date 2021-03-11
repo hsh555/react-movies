@@ -18,12 +18,12 @@ const Pagination = (props) => {
     }, [props.currentPage, props.totalPages]);
 
     const renderLinks = () => {
-        return pagesList.map(item => {
+        return pagesList.map((item, index) => {
             if (pagesList.includes(Number(props.currentPage))) {
                 if (Number(props.currentPage) === item) {
-                    return <Link to={`${pathName}?${props.query}=${props.queryVal}&page=${item}`} data-page={item} className="active">{item}</Link>
+                    return <Link key={index} to={`${pathName}?${props.query}=${props.queryVal}&page=${item}`} data-page={item} className="active">{item}</Link>
                 } else {
-                    return <Link to={`${pathName}?${props.query}=${props.queryVal}&page=${item}`} data-page={item}>{item}</Link>
+                    return <Link key={index} to={`${pathName}?${props.query}=${props.queryVal}&page=${item}`} data-page={item}>{item}</Link>
                 }
             } else {
                 return <Redirect to={`${pathName}?${props.query}=${props.queryVal}`} />

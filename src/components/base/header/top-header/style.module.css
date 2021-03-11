@@ -6,3 +6,9 @@
     padding: 6px 0;
     color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+    .topHeader {
+        flex-direction: column;
+    }
+}

@@ -7,3 +7,9 @@
     justify-content: space-around;
     color: #fcfcfc;
 }
+
+@media only screen and (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+    }
+  }

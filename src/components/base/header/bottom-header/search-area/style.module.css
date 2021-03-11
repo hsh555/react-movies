@@ -22,5 +22,6 @@
     font-size: 16px;
     border-top-right-radius: 31px;
     border-bottom-right-radius: 31px;
-    background: black;
+    background: #032541;
+    cursor: pointer;
 }

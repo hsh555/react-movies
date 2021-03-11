@@ -1,6 +1,4 @@
-// import AuthArea from "../../components/common/auth-area";
 import React from "react";
-
 import CardMovieList from "../../components/common/card-movie-list";
 import AddMeta from "../../components/tools/add-meta";
 

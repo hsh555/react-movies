@@ -81,3 +81,26 @@
     padding: 15px 0;
     line-height: 1.5;
 }
+
+@media only screen and (max-width: 600px) {
+    .movieDetails {
+        height: auto;
+    }
+    .detailsInner {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    .poster {
+        width: 100%;
+        height: auto;
+    }
+
+    .poster img{
+        height: auto;
+    }
+
+    .detailsInner .body {
+        width: 100%;
+    }
+}

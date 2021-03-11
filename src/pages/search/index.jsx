@@ -5,6 +5,7 @@ import MovieCard from "../../components/common/movie-card";
 import SingleLoader from "../../components/common/single-loader";
 import MoviesListLayout from "../../components/layouts/common/movies-list-layout";
 import AddMeta from "../../components/tools/add-meta";
+import useQuery from "../../hooks/use-query";
 import Pagination from "../../services/pagination";
 import { FetchSearchMoviesAction } from "../../store/api-store/thunk-actions";
 import baseUrls from "../../utils/base-urls";
@@ -12,11 +13,11 @@ import baseUrls from "../../utils/base-urls";
 const Search = (props) => {
     const { searchMovies, totalPages, totalResults, isLoading } = useSelector(state => state.apiReducer);
     const dispatch = useDispatch();
+    const query = useQuery();
 
-    const search = props.location.search;
-    const urlParams = new URLSearchParams(search);
-    const searchKey = urlParams.get("s");
-    const currentPage = urlParams.get("page") || 1;
+    const searchKey = query.get("s") || props.history.push("/");
+    const currentPage = query.get("page") || 1;
+
 
 
     useEffect(() => {
