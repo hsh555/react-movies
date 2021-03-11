@@ -3,6 +3,7 @@ import { Link, Redirect, withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import './style.css';
+import { scrollTop } from '../../utils/helpers';
 
 const Pagination = (props) => {
     const pathName = props.location.pathname;
@@ -31,8 +32,15 @@ const Pagination = (props) => {
         })
     }
 
+    const handleScrollToTop = (e) => {
+        const tagName = e.target.tagName;
+        if (tagName === "A" || tagName === "path" || tagName === "SVG") {
+            scrollTop()
+        }
+    }
+
     return (
-        <div className="pagination">
+        <div className="pagination" onClick={e => handleScrollToTop(e)}>
             <Link to={`${pathName}?${props.query}=${props.queryVal}&page=1`}>
                 First
             </Link>

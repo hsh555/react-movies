@@ -52,7 +52,7 @@ const MovieDetails = () => {
     return (
         <React.Fragment>
             <AddMeta title={movie.title} />
-            <div className={styles.movieDetails} style={{ backgroundImage: `url(${baseUrls.basePictureUrl}${movie.backdrop_path})` }}>
+            <div className={styles.movieDetails} style={{backgroundImage: movie.backdrop_path && `url(${baseUrls.basePictureUrl}${movie.backdrop_path})` }}>
                 <div className={styles.detailsInner}>
                     <div className={styles.poster}>
                         {movie.poster_path ? <img src={`${baseUrls.basePictureUrl}/${movie.poster_path}`} alt={movie.title} /> :

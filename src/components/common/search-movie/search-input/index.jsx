@@ -7,7 +7,8 @@ const SearchInput = (props) => {
     const dispatch = useDispatch();
     const handleOnKeyUp = (e) => {
         const { history } = props;
-        if (e.code === "Enter") {
+        const value = e.target.value;
+        if (e.code === "Enter" && value.trim().length) {
             history.push(`/search?s=${e.target.value}`);
             dispatch(toggleIsSearchMovieAction(false));
         }

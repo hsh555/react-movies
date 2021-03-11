@@ -5,7 +5,10 @@ import styles from "./style.module.css";
 const SearchArea = ({history}) => {
     const inputElement = useRef();
     const handleOnClick = () => {
-        history.push(`/search?s=${inputElement.current.value}`);
+        const value = inputElement.current.value;
+        if(value.trim().length) {
+            history.push(`/search?s=${value}`);
+        }
     }
 
     const handleOnkeyUp = (e) => {

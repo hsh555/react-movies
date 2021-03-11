@@ -18,8 +18,6 @@ const Search = (props) => {
     const searchKey = query.get("s") || props.history.push("/");
     const currentPage = query.get("page") || 1;
 
-
-
     useEffect(() => {
         getFromApi();
     }, [searchKey, currentPage]);
